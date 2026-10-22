@@ -128,7 +128,7 @@ def display_board(board: list[str], mode: str) -> None:
         raise ValueError(f"Nieznany tryb: {mode}")
 
 
-def play_game(agent_x, agent_o, mode: str = "textual") -> None:  # noqa: ANN001
+def play_game(agent_x, agent_o, mode: str = "visual") -> None:  # noqa: ANN001
     board = create_board()
     agents = {'X': agent_x, 'O': agent_o}
     current = 'X'
