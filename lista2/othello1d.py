@@ -3,7 +3,7 @@ from typing import Optional
 from IPython.display import clear_output
 
 
-def create_board(size: int = 8) -> list[str]:
+def create_board(size: int = 9) -> list[str]:
     if size < 2:
         raise ValueError("Rozmiar planszy musi wynosić przynajmniej 2.")
     return ['.'] * size
@@ -128,8 +128,8 @@ def display_board(board: list[str], mode: str) -> None:
         raise ValueError(f"Nieznany tryb: {mode}")
 
 
-def play_game(agent_x, agent_o, mode: str = "visual") -> None:  # noqa: ANN001
-    board = create_board()
+def play_game(agent_x, agent_o, mode: str = "textual", board_size: int = 8) -> None:  # noqa: ANN001
+    board = create_board(board_size)
     agents = {'X': agent_x, 'O': agent_o}
     current = 'X'
     opponent_map = {'X': 'O', 'O': 'X'}
