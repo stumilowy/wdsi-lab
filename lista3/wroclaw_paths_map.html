@@ -1,0 +1,2078 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_49754cfcfc093bbd17b8b4ac8c41c33c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+     <div style="position: fixed; bottom: 50px; left: 50px; width: 220px; height: 60px;
+     border:2px solid grey; z-index:9999; font-size:14px; background-color: white;
+     ">&nbsp; <b>Legenda</b><br>
+     &nbsp; <i class="fa fa-circle" style="color:red"></i>&nbsp; GBFS<br>
+&nbsp; <i class="fa fa-circle" style="color:blue"></i>&nbsp; A*<br>
+</div>
+    
+            <div class="folium-map" id="map_49754cfcfc093bbd17b8b4ac8c41c33c" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_49754cfcfc093bbd17b8b4ac8c41c33c = L.map(
+                "map_49754cfcfc093bbd17b8b4ac8c41c33c",
+                {
+                    center: [51.1079, 17.0385],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_dbf387b8118479f93b4f47d890f293d9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_dbf387b8118479f93b4f47d890f293d9.addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+            var marker_7823b9c11b37a16e1ab191e769977a71 = L.marker(
+                [51.111746845625, 17.061435821875],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_a391296b4ccd809697afa3b2ad39bc3f = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_41ace92e193438347b3a0db423c1b677 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogU3RhcnQsIEFycml2YWwgVGltZTogMCBkYXlzIDA3OjU5OjAwOwpQYXRoOiBBKiwgUm91dGU6IFN0YXJ0LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwNzo1OTowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_a391296b4ccd809697afa3b2ad39bc3f.setContent(i_frame_41ace92e193438347b3a0db423c1b677);
+            
+        
+
+        marker_7823b9c11b37a16e1ab191e769977a71.bindPopup(popup_a391296b4ccd809697afa3b2ad39bc3f)
+        ;
+
+        
+    
+    
+            marker_7823b9c11b37a16e1ab191e769977a71.bindTooltip(
+                `<div>
+                     PL. GRUNWALDZKI
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_97c23afc9f52a199bd5da4563d054a9e = L.marker(
+                [51.1101549025, 17.0553860325],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_400a0e018e8f440b4f86fea8116231f3 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_813e8673a57055f315f8b2cd19ce8fe9 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTQ2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwODowMjowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_400a0e018e8f440b4f86fea8116231f3.setContent(i_frame_813e8673a57055f315f8b2cd19ce8fe9);
+            
+        
+
+        marker_97c23afc9f52a199bd5da4563d054a9e.bindPopup(popup_400a0e018e8f440b4f86fea8116231f3)
+        ;
+
+        
+    
+    
+            marker_97c23afc9f52a199bd5da4563d054a9e.bindTooltip(
+                `<div>
+                     most Grunwaldzki
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_63068af0b6485afaed1954c50b1cfd07 = L.marker(
+                [51.1078565, 17.04563742],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_0e0649419f4a520250b9513b6cadf4f5 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_292c85c36b02632739eaac16ba00d528 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTQ2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwODowNDowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_0e0649419f4a520250b9513b6cadf4f5.setContent(i_frame_292c85c36b02632739eaac16ba00d528);
+            
+        
+
+        marker_63068af0b6485afaed1954c50b1cfd07.bindPopup(popup_0e0649419f4a520250b9513b6cadf4f5)
+        ;
+
+        
+    
+    
+            marker_63068af0b6485afaed1954c50b1cfd07.bindTooltip(
+                `<div>
+                     Poczta Główna
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_f28c2947b25832d3ef4094adf8a9c812 = L.marker(
+                [51.108233506666664, 17.039620386666666],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_29e41917e8f3b732a4ad446dccdebb31 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_05d2593915d894b4a285f01a104bfd98 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogRCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MTU6MDA7ClBhdGg6IEEqLCBSb3V0ZTogMiwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MDk6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_29e41917e8f3b732a4ad446dccdebb31.setContent(i_frame_05d2593915d894b4a285f01a104bfd98);
+            
+        
+
+        marker_f28c2947b25832d3ef4094adf8a9c812.bindPopup(popup_29e41917e8f3b732a4ad446dccdebb31)
+        ;
+
+        
+    
+    
+            marker_f28c2947b25832d3ef4094adf8a9c812.bindTooltip(
+                `<div>
+                     GALERIA DOMINIKAŃSKA
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_92479884e900e6c93c452288adbb7801 = L.marker(
+                [51.104047351999995, 17.030755235999997],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_edc4d8f0f6b8582ac1a697f1ff5b622c = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_1b5e9d29e9feeb7a8be51df836fccdab = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogRCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MTk6MDA7ClBhdGg6IEEqLCBSb3V0ZTogQSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MTU6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_edc4d8f0f6b8582ac1a697f1ff5b622c.setContent(i_frame_1b5e9d29e9feeb7a8be51df836fccdab);
+            
+        
+
+        marker_92479884e900e6c93c452288adbb7801.bindPopup(popup_edc4d8f0f6b8582ac1a697f1ff5b622c)
+        ;
+
+        
+    
+    
+            marker_92479884e900e6c93c452288adbb7801.bindTooltip(
+                `<div>
+                     Renoma
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d94edbf32dda4a6384f90ebf65953845 = L.marker(
+                [51.107386661999996, 17.021539865],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_7dc45dc3cb9f05c73bcdd1b761b42226 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_8dd53ad58440b6413d1b46ac5e80de29 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwODozMTowMDsKUGF0aDogQSosIFJvdXRlOiAxNDksIEFycml2YWwgVGltZTogMCBkYXlzIDA4OjIwOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_7dc45dc3cb9f05c73bcdd1b761b42226.setContent(i_frame_8dd53ad58440b6413d1b46ac5e80de29);
+            
+        
+
+        marker_d94edbf32dda4a6384f90ebf65953845.bindPopup(popup_7dc45dc3cb9f05c73bcdd1b761b42226)
+        ;
+
+        
+    
+    
+            marker_d94edbf32dda4a6384f90ebf65953845.bindTooltip(
+                `<div>
+                     pl. Orląt Lwowskich
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_15aaffd0bc4be1eced5fbc3cb462f75d = L.marker(
+                [51.105435375, 17.014417260000002],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_75b24bdf39cf2de3b9d3886707fb7e80 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_99fb6c8af27b10ed511b2136649fa671 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTI3LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwODozNjowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_75b24bdf39cf2de3b9d3886707fb7e80.setContent(i_frame_99fb6c8af27b10ed511b2136649fa671);
+            
+        
+
+        marker_15aaffd0bc4be1eced5fbc3cb462f75d.bindPopup(popup_75b24bdf39cf2de3b9d3886707fb7e80)
+        ;
+
+        
+    
+    
+            marker_15aaffd0bc4be1eced5fbc3cb462f75d.bindTooltip(
+                `<div>
+                     Tęczowa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_eda0de9fd19c16b4d4d6e7104c3ea20e = L.marker(
+                [51.10201158833333, 17.013311698333336],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_b3d15a130b542b009b3ec92abd6c3ade = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_aaf6cb3ba09850361277ca651b64091f = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTI3LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwODozOTowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_b3d15a130b542b009b3ec92abd6c3ade.setContent(i_frame_aaf6cb3ba09850361277ca651b64091f);
+            
+        
+
+        marker_eda0de9fd19c16b4d4d6e7104c3ea20e.bindPopup(popup_b3d15a130b542b009b3ec92abd6c3ade)
+        ;
+
+        
+    
+    
+            marker_eda0de9fd19c16b4d4d6e7104c3ea20e.bindTooltip(
+                `<div>
+                     Grabiszyńska
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_68db8ae3f21b539892180b033437f5ab = L.marker(
+                [51.1010895575, 17.0076865325],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_53a58d659299a311e45897c5449662db = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_1ff72b20519d7c92aa1e1bf849c746b0 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogNCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDQ6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_53a58d659299a311e45897c5449662db.setContent(i_frame_1ff72b20519d7c92aa1e1bf849c746b0);
+            
+        
+
+        marker_68db8ae3f21b539892180b033437f5ab.bindPopup(popup_53a58d659299a311e45897c5449662db)
+        ;
+
+        
+    
+    
+            marker_68db8ae3f21b539892180b033437f5ab.bindTooltip(
+                `<div>
+                     Pereca
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_47c93448d0e287c305e8cac6a18cb0a5 = L.marker(
+                [51.099447828, 17.001092718000002],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_250bf1acbb06620359d71bec22353965 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_92e3c1640beb97f33802e96c7dcfbcbb = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogNCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDY6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_250bf1acbb06620359d71bec22353965.setContent(i_frame_92e3c1640beb97f33802e96c7dcfbcbb);
+            
+        
+
+        marker_47c93448d0e287c305e8cac6a18cb0a5.bindPopup(popup_250bf1acbb06620359d71bec22353965)
+        ;
+
+        
+    
+    
+            marker_47c93448d0e287c305e8cac6a18cb0a5.bindTooltip(
+                `<div>
+                     Stalowa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_757a4b1f440935dfbd28d025c440b6e7 = L.marker(
+                [51.098468315000005, 16.99620968],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_44a9bd732a4d56f7267831740b9fc206 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_6476b1cfbbbce5133fd89bf37577a2ec = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogNCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDc6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_44a9bd732a4d56f7267831740b9fc206.setContent(i_frame_6476b1cfbbbce5133fd89bf37577a2ec);
+            
+        
+
+        marker_757a4b1f440935dfbd28d025c440b6e7.bindPopup(popup_44a9bd732a4d56f7267831740b9fc206)
+        ;
+
+        
+    
+    
+            marker_757a4b1f440935dfbd28d025c440b6e7.bindTooltip(
+                `<div>
+                     pl. Srebrny
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_8d595b758e08326c4edcb9d408f230be = L.marker(
+                [51.09760909, 16.992287885],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_a78e00d965828985f6772dd0468215ed = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_e0684c265128f860e86c088581233fb7 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogNCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDg6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_a78e00d965828985f6772dd0468215ed.setContent(i_frame_e0684c265128f860e86c088581233fb7);
+            
+        
+
+        marker_8d595b758e08326c4edcb9d408f230be.bindPopup(popup_a78e00d965828985f6772dd0468215ed)
+        ;
+
+        
+    
+    
+            marker_8d595b758e08326c4edcb9d408f230be.bindTooltip(
+                `<div>
+                     Bzowa (Centrum Historii Zajezdnia)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_17fa931f1a35194736551d43856b66e9 = L.marker(
+                [51.096011704999995, 16.98587873],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_6c387a08c7dd3f08a056c3619c0f5f42 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_8566d4891f570f983b138503bc8ee253 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogNCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDk6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_6c387a08c7dd3f08a056c3619c0f5f42.setContent(i_frame_8566d4891f570f983b138503bc8ee253);
+            
+        
+
+        marker_17fa931f1a35194736551d43856b66e9.bindPopup(popup_6c387a08c7dd3f08a056c3619c0f5f42)
+        ;
+
+        
+    
+    
+            marker_17fa931f1a35194736551d43856b66e9.bindTooltip(
+                `<div>
+                     Hutmen
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d4106f78393b6d41e92b2e1de34e3cb6 = L.marker(
+                [51.09444512222222, 16.97995782888889],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_3214f178a3b713f0c0ad3d6c195b4cd1 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_1624c554eab58e88b213145a3ad390bc = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogNCwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NTE6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_3214f178a3b713f0c0ad3d6c195b4cd1.setContent(i_frame_1624c554eab58e88b213145a3ad390bc);
+            
+        
+
+        marker_d4106f78393b6d41e92b2e1de34e3cb6.bindPopup(popup_3214f178a3b713f0c0ad3d6c195b4cd1)
+        ;
+
+        
+    
+    
+            marker_d4106f78393b6d41e92b2e1de34e3cb6.bindTooltip(
+                `<div>
+                     FAT
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c29fa3044bc0cdce887ee41b6a3702d1 = L.marker(
+                [51.101464899999996, 16.97280023],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_4e194b8c6df07226504a7ab0554af13c = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_f811d105cedc3ef321bd7084e29f846b = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTI2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTowMTowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_4e194b8c6df07226504a7ab0554af13c.setContent(i_frame_f811d105cedc3ef321bd7084e29f846b);
+            
+        
+
+        marker_c29fa3044bc0cdce887ee41b6a3702d1.bindPopup(popup_4e194b8c6df07226504a7ab0554af13c)
+        ;
+
+        
+    
+    
+            marker_c29fa3044bc0cdce887ee41b6a3702d1.bindTooltip(
+                `<div>
+                     ROD Oświata
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1d26963b4b3ad363ff718687111f0c4a = L.marker(
+                [51.1055896, 16.97071727],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_226ecdd2c62ea3a160db7d7822ccfe28 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_dec7119b1086706ba34b69e69d4a0c5d = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTI2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTowMjowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_226ecdd2c62ea3a160db7d7822ccfe28.setContent(i_frame_dec7119b1086706ba34b69e69d4a0c5d);
+            
+        
+
+        marker_1d26963b4b3ad363ff718687111f0c4a.bindPopup(popup_226ecdd2c62ea3a160db7d7822ccfe28)
+        ;
+
+        
+    
+    
+            marker_1d26963b4b3ad363ff718687111f0c4a.bindTooltip(
+                `<div>
+                     Wrocławski Park Technologiczny
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_b1b3e652a6fe661d8953ea6f4b80a032 = L.marker(
+                [51.109643155, 16.96869684],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_daa874ced77c31eb47e40777a47fff99 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_47105519546a0402bd6ea2358a8ab676 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTI2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTowNDowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_daa874ced77c31eb47e40777a47fff99.setContent(i_frame_47105519546a0402bd6ea2358a8ab676);
+            
+        
+
+        marker_b1b3e652a6fe661d8953ea6f4b80a032.bindPopup(popup_daa874ced77c31eb47e40777a47fff99)
+        ;
+
+        
+    
+    
+            marker_b1b3e652a6fe661d8953ea6f4b80a032.bindTooltip(
+                `<div>
+                     Szkocka
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_af5e312e7a51e6f8a8a5e4f04a124823 = L.marker(
+                [51.1138185, 16.964762],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_87a864ec242b4bce61a9a24a519ce924 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_cf158d15f0ec8502a2dbbefedadb1013 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTI2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTowNzowMDsKUGF0aDogQSosIFJvdXRlOiAxNDksIEFycml2YWwgVGltZTogMCBkYXlzIDA4OjMyOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_87a864ec242b4bce61a9a24a519ce924.setContent(i_frame_cf158d15f0ec8502a2dbbefedadb1013);
+            
+        
+
+        marker_af5e312e7a51e6f8a8a5e4f04a124823.bindPopup(popup_87a864ec242b4bce61a9a24a519ce924)
+        ;
+
+        
+    
+    
+            marker_af5e312e7a51e6f8a8a5e4f04a124823.bindTooltip(
+                `<div>
+                     Nowodworska
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_35d2e59e0f01c15f2cbf590d79aaf366 = L.marker(
+                [51.112449125000005, 16.960456660000002],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_f11a9c98b77a08a4ce5519069914c97c = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_edaf15d6435997df88e0f5ce462e571e = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTI2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTowODowMDsKUGF0aDogQSosIFJvdXRlOiAxNDksIEFycml2YWwgVGltZTogMCBkYXlzIDA4OjMzOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_f11a9c98b77a08a4ce5519069914c97c.setContent(i_frame_edaf15d6435997df88e0f5ce462e571e);
+            
+        
+
+        marker_35d2e59e0f01c15f2cbf590d79aaf366.bindPopup(popup_f11a9c98b77a08a4ce5519069914c97c)
+        ;
+
+        
+    
+    
+            marker_35d2e59e0f01c15f2cbf590d79aaf366.bindTooltip(
+                `<div>
+                     Strzegomska (krzyżówka)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_0e9a68ca24953c9ebd8ad9b3be63bd79 = L.marker(
+                [51.110406499999996, 16.9558685],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_99c7b4e7123166826a27a85eac46a1fc = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_ae0cf23cf26238acb42608c4283dca96 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTMsIEFycml2YWwgVGltZTogMCBkYXlzIDA5OjEyOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_99c7b4e7123166826a27a85eac46a1fc.setContent(i_frame_ae0cf23cf26238acb42608c4283dca96);
+            
+        
+
+        marker_0e9a68ca24953c9ebd8ad9b3be63bd79.bindPopup(popup_99c7b4e7123166826a27a85eac46a1fc)
+        ;
+
+        
+    
+    
+            marker_0e9a68ca24953c9ebd8ad9b3be63bd79.bindTooltip(
+                `<div>
+                     Rogowska (P+R)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_12b759a29095b258fba04b1b57181fe9 = L.marker(
+                [51.1065358825, 16.949547685],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_fc522e0013b221924177346f75d3d4b5 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_f75fa4e60c5418e8fc117bcb67bf9b5e = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTIyLCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOToxNzowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_fc522e0013b221924177346f75d3d4b5.setContent(i_frame_f75fa4e60c5418e8fc117bcb67bf9b5e);
+            
+        
+
+        marker_12b759a29095b258fba04b1b57181fe9.bindPopup(popup_fc522e0013b221924177346f75d3d4b5)
+        ;
+
+        
+    
+    
+            marker_12b759a29095b258fba04b1b57181fe9.bindTooltip(
+                `<div>
+                     Mińska (Rondo Rotm. Pileckiego)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_342f80a898e2d5fe582d17580151844a = L.marker(
+                [51.10897669, 16.942424109999997],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_ee6399946004c4f494f5ebd0c1be5e24 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_88464b5f94e229f717ef7b72c3e2b18b = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTozNDowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_ee6399946004c4f494f5ebd0c1be5e24.setContent(i_frame_88464b5f94e229f717ef7b72c3e2b18b);
+            
+        
+
+        marker_342f80a898e2d5fe582d17580151844a.bindPopup(popup_ee6399946004c4f494f5ebd0c1be5e24)
+        ;
+
+        
+    
+    
+            marker_342f80a898e2d5fe582d17580151844a.bindTooltip(
+                `<div>
+                     Płaska
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_823fb7ee4cf2b169b611bdbd7efb5578 = L.marker(
+                [51.10967282, 16.92912423],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_4afc9d77fc777a365e6d4846da74a818 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_d45a1e08be76948679a492606bd20146 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTozNjowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_4afc9d77fc777a365e6d4846da74a818.setContent(i_frame_d45a1e08be76948679a492606bd20146);
+            
+        
+
+        marker_823fb7ee4cf2b169b611bdbd7efb5578.bindPopup(popup_4afc9d77fc777a365e6d4846da74a818)
+        ;
+
+        
+    
+    
+            marker_823fb7ee4cf2b169b611bdbd7efb5578.bindTooltip(
+                `<div>
+                     Zagłoby
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4c8773866f2f5c10212b03bda3a8f36a = L.marker(
+                [51.108927355, 16.917949265],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_423cbc740b342372fa50fd065f026f28 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_f45a536f853a9f6fe2ea3e0d5a1940e0 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTozODowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_423cbc740b342372fa50fd065f026f28.setContent(i_frame_f45a536f853a9f6fe2ea3e0d5a1940e0);
+            
+        
+
+        marker_4c8773866f2f5c10212b03bda3a8f36a.bindPopup(popup_423cbc740b342372fa50fd065f026f28)
+        ;
+
+        
+    
+    
+            marker_4c8773866f2f5c10212b03bda3a8f36a.bindTooltip(
+                `<div>
+                     Przybyły
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6ff6d3e6baeceb060d091f1cd4ce5f3c = L.marker(
+                [51.108538945, 16.909639725],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_1f0d06cd116e504f4534814148439529 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_c91efa94efd51d57a42fdccc33376c4e = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTozOTowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_1f0d06cd116e504f4534814148439529.setContent(i_frame_c91efa94efd51d57a42fdccc33376c4e);
+            
+        
+
+        marker_6ff6d3e6baeceb060d091f1cd4ce5f3c.bindPopup(popup_1f0d06cd116e504f4534814148439529)
+        ;
+
+        
+    
+    
+            marker_6ff6d3e6baeceb060d091f1cd4ce5f3c.bindTooltip(
+                `<div>
+                     Graniczna
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_4a27f831645916500897bb70a7df938f = L.marker(
+                [51.10922461, 16.904753900000003],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_428213137c686004477696606a33cdd1 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_c6550245edd8497119a155a55b84cfb3 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTo0MDowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_428213137c686004477696606a33cdd1.setContent(i_frame_c6550245edd8497119a155a55b84cfb3);
+            
+        
+
+        marker_4a27f831645916500897bb70a7df938f.bindPopup(popup_428213137c686004477696606a33cdd1)
+        ;
+
+        
+    
+    
+            marker_4a27f831645916500897bb70a7df938f.bindTooltip(
+                `<div>
+                     Skarżyńskiego
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c84f7e5ac0412c34824992009f3e1597 = L.marker(
+                [51.10790886105, 16.89939125425],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_b56f880f01941f01bfa0bd3f9ace0667 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_a2a142c356e69de1977091261b25adef = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTo0MTowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_b56f880f01941f01bfa0bd3f9ace0667.setContent(i_frame_a2a142c356e69de1977091261b25adef);
+            
+        
+
+        marker_c84f7e5ac0412c34824992009f3e1597.bindPopup(popup_b56f880f01941f01bfa0bd3f9ace0667)
+        ;
+
+        
+    
+    
+            marker_c84f7e5ac0412c34824992009f3e1597.bindTooltip(
+                `<div>
+                     Zarembowicza
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3cc4092aa47ca1ec3b42a984a530d7c3 = L.marker(
+                [51.10501115, 16.8990643],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_f1d22f3d8bcf55294e3c95e49669d99d = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_2fe5a8de405a2c18c695ae557c72cbbf = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTo0MjowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_f1d22f3d8bcf55294e3c95e49669d99d.setContent(i_frame_2fe5a8de405a2c18c695ae557c72cbbf);
+            
+        
+
+        marker_3cc4092aa47ca1ec3b42a984a530d7c3.bindPopup(popup_f1d22f3d8bcf55294e3c95e49669d99d)
+        ;
+
+        
+    
+    
+            marker_3cc4092aa47ca1ec3b42a984a530d7c3.bindTooltip(
+                `<div>
+                     Strachowice General Aviation
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e075a2c8c52ee11be35ad5d8ed047da5 = L.marker(
+                [51.110909565, 16.898401749999998],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_16bd67d1a961ebcff07cfb2e82d853c8 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_e212a38a75bea669e3e34ffa4b86c9c6 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTo0NDowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_16bd67d1a961ebcff07cfb2e82d853c8.setContent(i_frame_e212a38a75bea669e3e34ffa4b86c9c6);
+            
+        
+
+        marker_e075a2c8c52ee11be35ad5d8ed047da5.bindPopup(popup_16bd67d1a961ebcff07cfb2e82d853c8)
+        ;
+
+        
+    
+    
+            marker_e075a2c8c52ee11be35ad5d8ed047da5.bindTooltip(
+                `<div>
+                     Graniczna (Strachowicka)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_530c128baa4bae2639d7fb5f32aa7422 = L.marker(
+                [51.111105995, 16.88941317],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_67070dc8cd0d6dc92a0926192478d21e = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_9099af7ee2527a415f6837b034165c53 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTo0NTowMDs=" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_67070dc8cd0d6dc92a0926192478d21e.setContent(i_frame_9099af7ee2527a415f6837b034165c53);
+            
+        
+
+        marker_530c128baa4bae2639d7fb5f32aa7422.bindPopup(popup_67070dc8cd0d6dc92a0926192478d21e)
+        ;
+
+        
+    
+    
+            marker_530c128baa4bae2639d7fb5f32aa7422.bindTooltip(
+                `<div>
+                     Rdestowa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_24ecfff9fb53416b3bb4d9828532fd9e = L.marker(
+                [51.10963532333333, 16.88163402],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_7379b6f9e7d42dfc29be25ecb85adb69 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_9da95c61a60a44c9e6abb31398a7a2f2 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBHQkZTLCBSb3V0ZTogMTA2LCBBcnJpdmFsIFRpbWU6IDAgZGF5cyAwOTo0ODowMDsKUGF0aDogQSosIFJvdXRlOiAxMjksIEFycml2YWwgVGltZTogMCBkYXlzIDA5OjAyOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_7379b6f9e7d42dfc29be25ecb85adb69.setContent(i_frame_9da95c61a60a44c9e6abb31398a7a2f2);
+            
+        
+
+        marker_24ecfff9fb53416b3bb4d9828532fd9e.bindPopup(popup_7379b6f9e7d42dfc29be25ecb85adb69)
+        ;
+
+        
+    
+    
+            marker_24ecfff9fb53416b3bb4d9828532fd9e.bindTooltip(
+                `<div>
+                     PORT LOTNICZY
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_3bfe6b5f4cd7498151a09ee2436289e0 = L.marker(
+                [51.1125706475, 17.0563859525],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_d22667275daf5705d8c055acdd3b4fed = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_97e2312af72f42a5b529c4280582c718 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDIsIEFycml2YWwgVGltZTogMCBkYXlzIDA4OjAwOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_d22667275daf5705d8c055acdd3b4fed.setContent(i_frame_97e2312af72f42a5b529c4280582c718);
+            
+        
+
+        marker_3bfe6b5f4cd7498151a09ee2436289e0.bindPopup(popup_d22667275daf5705d8c055acdd3b4fed)
+        ;
+
+        
+    
+    
+            marker_3bfe6b5f4cd7498151a09ee2436289e0.bindTooltip(
+                `<div>
+                     Reja
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_fafdf473a4585ed942899377de1d32b6 = L.marker(
+                [51.11367602714286, 17.05068700714286],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_a03db181c7dbace7ffdb8e902f48e344 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_7b1d29f1d0d7b772701e7e409bf5acad = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDIsIEFycml2YWwgVGltZTogMCBkYXlzIDA4OjAyOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_a03db181c7dbace7ffdb8e902f48e344.setContent(i_frame_7b1d29f1d0d7b772701e7e409bf5acad);
+            
+        
+
+        marker_fafdf473a4585ed942899377de1d32b6.bindPopup(popup_a03db181c7dbace7ffdb8e902f48e344)
+        ;
+
+        
+    
+    
+            marker_fafdf473a4585ed942899377de1d32b6.bindTooltip(
+                `<div>
+                     Katedra
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6dcc71370bb77ea963d0049aa5f0d156 = L.marker(
+                [51.1099595225, 17.0480065],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_e4ee1bb0c8f22396e8d805586820f4ce = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_aa2e8e877581800896f331779a02ad3b = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDIsIEFycml2YWwgVGltZTogMCBkYXlzIDA4OjA1OjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_e4ee1bb0c8f22396e8d805586820f4ce.setContent(i_frame_aa2e8e877581800896f331779a02ad3b);
+            
+        
+
+        marker_6dcc71370bb77ea963d0049aa5f0d156.bindPopup(popup_e4ee1bb0c8f22396e8d805586820f4ce)
+        ;
+
+        
+    
+    
+            marker_6dcc71370bb77ea963d0049aa5f0d156.bindTooltip(
+                `<div>
+                     Urząd Wojewódzki (Muzeum Narodowe)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_16fa9ce750c290caf24fb87e0a6f2332 = L.marker(
+                [51.104067668, 17.037619452],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_cdda80740db93bd6fad49225c6f85c54 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_6086da6121ab0e6844b48b716f5fddcd = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDIsIEFycml2YWwgVGltZTogMCBkYXlzIDA4OjExOjAwOw==" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_cdda80740db93bd6fad49225c6f85c54.setContent(i_frame_6086da6121ab0e6844b48b716f5fddcd);
+            
+        
+
+        marker_16fa9ce750c290caf24fb87e0a6f2332.bindPopup(popup_cdda80740db93bd6fad49225c6f85c54)
+        ;
+
+        
+    
+    
+            marker_16fa9ce750c290caf24fb87e0a6f2332.bindTooltip(
+                `<div>
+                     Bastion Sakwowy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c581d07f860459b233d6e1eca68322c8 = L.marker(
+                [51.108884669999995, 17.01814152],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_8e169092fd0a72c1cfec3efb03e51801 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_758109548101f0c18c758333e72ddc56 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MjI6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_8e169092fd0a72c1cfec3efb03e51801.setContent(i_frame_758109548101f0c18c758333e72ddc56);
+            
+        
+
+        marker_c581d07f860459b233d6e1eca68322c8.bindPopup(popup_8e169092fd0a72c1cfec3efb03e51801)
+        ;
+
+        
+    
+    
+            marker_c581d07f860459b233d6e1eca68322c8.bindTooltip(
+                `<div>
+                     Dworzec Świebodzki
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_22019c4a7e9c30c5857e223f0858ecef = L.marker(
+                [51.110852, 17.0064815],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_fbd4e5943e5231744448d1093f2e964a = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_36ce2ff1c55d530dbaf35c5077799e02 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MjQ6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_fbd4e5943e5231744448d1093f2e964a.setContent(i_frame_36ce2ff1c55d530dbaf35c5077799e02);
+            
+        
+
+        marker_22019c4a7e9c30c5857e223f0858ecef.bindPopup(popup_fbd4e5943e5231744448d1093f2e964a)
+        ;
+
+        
+    
+    
+            marker_22019c4a7e9c30c5857e223f0858ecef.bindTooltip(
+                `<div>
+                     Smolecka
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_71c7cf39e961bb169ae349dcf17fd602 = L.marker(
+                [51.11211598, 17.000957593333336],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_87e65f7d81501253af305ae81b8a80de = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_87f2aac7a1a762bb53a3eed9fe3073ef = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MjU6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_87e65f7d81501253af305ae81b8a80de.setContent(i_frame_87f2aac7a1a762bb53a3eed9fe3073ef);
+            
+        
+
+        marker_71c7cf39e961bb169ae349dcf17fd602.bindPopup(popup_87e65f7d81501253af305ae81b8a80de)
+        ;
+
+        
+    
+    
+            marker_71c7cf39e961bb169ae349dcf17fd602.bindTooltip(
+                `<div>
+                     Śrubowa
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_2e094827a5aea7a37e8b060ae81f0326 = L.marker(
+                [51.11284961333333, 16.994635423333335],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_e0541f04cf5638aaa41e84cc03a07734 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_09ca8bdac44e1677a14809778c5a4367 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MjY6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_e0541f04cf5638aaa41e84cc03a07734.setContent(i_frame_09ca8bdac44e1677a14809778c5a4367);
+            
+        
+
+        marker_2e094827a5aea7a37e8b060ae81f0326.bindPopup(popup_e0541f04cf5638aaa41e84cc03a07734)
+        ;
+
+        
+    
+    
+            marker_2e094827a5aea7a37e8b060ae81f0326.bindTooltip(
+                `<div>
+                     Wrocławski Park Przemysłowy
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a1abc9834a3689648030eafbf352a587 = L.marker(
+                [51.114021, 16.984523000000003],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_ebf21ca46d45d73fb6646a48be2aacdd = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_829cc116b1234cebf13ba12c28d48bca = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6Mjg6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_ebf21ca46d45d73fb6646a48be2aacdd.setContent(i_frame_829cc116b1234cebf13ba12c28d48bca);
+            
+        
+
+        marker_a1abc9834a3689648030eafbf352a587.bindPopup(popup_ebf21ca46d45d73fb6646a48be2aacdd)
+        ;
+
+        
+    
+    
+            marker_a1abc9834a3689648030eafbf352a587.bindTooltip(
+                `<div>
+                     Park Biznesu
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_5294d9ffc962b2aeadeaab8ee973231f = L.marker(
+                [51.114054, 16.9779775],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_a8c296f78ad77bb4b4adc8ebe48cac19 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_ac144ccf5ca89aeab1644f1ac81b0b65 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6Mjk6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_a8c296f78ad77bb4b4adc8ebe48cac19.setContent(i_frame_ac144ccf5ca89aeab1644f1ac81b0b65);
+            
+        
+
+        marker_5294d9ffc962b2aeadeaab8ee973231f.bindPopup(popup_a8c296f78ad77bb4b4adc8ebe48cac19)
+        ;
+
+        
+    
+    
+            marker_5294d9ffc962b2aeadeaab8ee973231f.bindTooltip(
+                `<div>
+                     Babimojska
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_1acf6ebf76fdf0ef32739aed7bf2e75b = L.marker(
+                [51.114364, 16.9737085],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_e0221c6e019610b8dd2b99008c801374 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_f50b0d7e46a64f6616dec33c0c5dea6a = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MzA6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_e0221c6e019610b8dd2b99008c801374.setContent(i_frame_f50b0d7e46a64f6616dec33c0c5dea6a);
+            
+        
+
+        marker_1acf6ebf76fdf0ef32739aed7bf2e75b.bindPopup(popup_e0221c6e019610b8dd2b99008c801374)
+        ;
+
+        
+    
+    
+            marker_1acf6ebf76fdf0ef32739aed7bf2e75b.bindTooltip(
+                `<div>
+                     Strzegomska 148
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_ed2c6ca63a90c24be3a95bb9b5beebfd = L.marker(
+                [51.115228785, 16.95831088],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_edeabbcba61b7348dfb4a2c0950d86e8 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_aba4c1d57636d165cc0025cec49a03c2 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MzU6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_edeabbcba61b7348dfb4a2c0950d86e8.setContent(i_frame_aba4c1d57636d165cc0025cec49a03c2);
+            
+        
+
+        marker_ed2c6ca63a90c24be3a95bb9b5beebfd.bindPopup(popup_edeabbcba61b7348dfb4a2c0950d86e8)
+        ;
+
+        
+    
+    
+            marker_ed2c6ca63a90c24be3a95bb9b5beebfd.bindTooltip(
+                `<div>
+                     Chociebuska (C. K. Nowy Pafawag)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e6adf0da9d5af3d8bd5cd061bcbfc903 = L.marker(
+                [51.11863753, 16.954328875],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_1b005d2babd0c00c90e78e7411b815d9 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_7c16b21206dc91ec3d4ce7cfd205f2d5 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6MzY6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_1b005d2babd0c00c90e78e7411b815d9.setContent(i_frame_7c16b21206dc91ec3d4ce7cfd205f2d5);
+            
+        
+
+        marker_e6adf0da9d5af3d8bd5cd061bcbfc903.bindPopup(popup_1b005d2babd0c00c90e78e7411b815d9)
+        ;
+
+        
+    
+    
+            marker_e6adf0da9d5af3d8bd5cd061bcbfc903.bindTooltip(
+                `<div>
+                     Rogowska (Ośrodek sportu)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_64f8769a830d1a09da8f0da8d5a98046 = L.marker(
+                [51.11960230333333, 16.952252088333335],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_43c29c8044730e778438a8667d117589 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_c51f0aad3f99e99c4f30ac829e7a6a08 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6Mzc6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_43c29c8044730e778438a8667d117589.setContent(i_frame_c51f0aad3f99e99c4f30ac829e7a6a08);
+            
+        
+
+        marker_64f8769a830d1a09da8f0da8d5a98046.bindPopup(popup_43c29c8044730e778438a8667d117589)
+        ;
+
+        
+    
+    
+            marker_64f8769a830d1a09da8f0da8d5a98046.bindTooltip(
+                `<div>
+                     Wrocław Nowy Dwór (P+R)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_725723ca74ecc279bbead3ee15144fd9 = L.marker(
+                [51.1214375725, 16.9462274575],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_7cf99eca04b15719aa465d661b2df89c = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_05aaf24f63de34538df788cafad18d8b = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDE0OSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6Mzk6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_7cf99eca04b15719aa465d661b2df89c.setContent(i_frame_05aaf24f63de34538df788cafad18d8b);
+            
+        
+
+        marker_725723ca74ecc279bbead3ee15144fd9.bindPopup(popup_7cf99eca04b15719aa465d661b2df89c)
+        ;
+
+        
+    
+    
+            marker_725723ca74ecc279bbead3ee15144fd9.bindTooltip(
+                `<div>
+                     Kołobrzeska
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_d365e3073d1ee64bf5b435c0a9366fbd = L.marker(
+                [51.122500715, 16.930887435000002],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_e5a2297746076848324af09e21457b2a = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_5dd1bdb9a4de6bfe6eb0062246fd15f5 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDU6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_e5a2297746076848324af09e21457b2a.setContent(i_frame_5dd1bdb9a4de6bfe6eb0062246fd15f5);
+            
+        
+
+        marker_d365e3073d1ee64bf5b435c0a9366fbd.bindPopup(popup_e5a2297746076848324af09e21457b2a)
+        ;
+
+        
+    
+    
+            marker_d365e3073d1ee64bf5b435c0a9366fbd.bindTooltip(
+                `<div>
+                     Szczecińska
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_6df7c64da652afac7a91aa2c2553f316 = L.marker(
+                [51.123362915, 16.923892844999997],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_feb92a151e369762cdbcb499f3066b36 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_dd4a900f2b32463d6f39b3d7cb4ccdb0 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDY6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_feb92a151e369762cdbcb499f3066b36.setContent(i_frame_dd4a900f2b32463d6f39b3d7cb4ccdb0);
+            
+        
+
+        marker_6df7c64da652afac7a91aa2c2553f316.bindPopup(popup_feb92a151e369762cdbcb499f3066b36)
+        ;
+
+        
+    
+    
+            marker_6df7c64da652afac7a91aa2c2553f316.bindTooltip(
+                `<div>
+                     Żerniki
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a3510a50dc754cb0087523bc85cfa44b = L.marker(
+                [51.123594925, 16.91797183],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_44cc87d7b7b0610ee2f81b4f3e384464 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_6871df6ed2fef57dfd338610634a881d = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDc6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_44cc87d7b7b0610ee2f81b4f3e384464.setContent(i_frame_6871df6ed2fef57dfd338610634a881d);
+            
+        
+
+        marker_a3510a50dc754cb0087523bc85cfa44b.bindPopup(popup_44cc87d7b7b0610ee2f81b4f3e384464)
+        ;
+
+        
+    
+    
+            marker_a3510a50dc754cb0087523bc85cfa44b.bindTooltip(
+                `<div>
+                     Strachowicka
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_30ffdbd5b5ed5b5e641ed15d70f2ace5 = L.marker(
+                [51.125673230000004, 16.91203789],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_0bcc9a33f6d8e338a8a3ae1d421d96f6 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_f523dbb55409eeb3ea06ae9db4be9640 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDg6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_0bcc9a33f6d8e338a8a3ae1d421d96f6.setContent(i_frame_f523dbb55409eeb3ea06ae9db4be9640);
+            
+        
+
+        marker_30ffdbd5b5ed5b5e641ed15d70f2ace5.bindPopup(popup_0bcc9a33f6d8e338a8a3ae1d421d96f6)
+        ;
+
+        
+    
+    
+            marker_30ffdbd5b5ed5b5e641ed15d70f2ace5.bindTooltip(
+                `<div>
+                     Żernicka
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_e1fb6937b31d3b7cefd1813de78815d8 = L.marker(
+                [51.12610165, 16.90944279],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_740d345929a84aa61d27d8449faaa854 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_9e23258cffcac86524dff3bbfd2bda27 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NDk6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_740d345929a84aa61d27d8449faaa854.setContent(i_frame_9e23258cffcac86524dff3bbfd2bda27);
+            
+        
+
+        marker_e1fb6937b31d3b7cefd1813de78815d8.bindPopup(popup_740d345929a84aa61d27d8449faaa854)
+        ;
+
+        
+    
+    
+            marker_e1fb6937b31d3b7cefd1813de78815d8.bindTooltip(
+                `<div>
+                     Jerzmanowska nr 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_a75e86c29acad1581fc14fff4266b7dc = L.marker(
+                [51.127469355, 16.90120229],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_a576f42fce151aece5524197ecedb4b1 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_15b985cd7ae105dcc74951855de414c8 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NTA6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_a576f42fce151aece5524197ecedb4b1.setContent(i_frame_15b985cd7ae105dcc74951855de414c8);
+            
+        
+
+        marker_a75e86c29acad1581fc14fff4266b7dc.bindPopup(popup_a576f42fce151aece5524197ecedb4b1)
+        ;
+
+        
+    
+    
+            marker_a75e86c29acad1581fc14fff4266b7dc.bindTooltip(
+                `<div>
+                     Jerzmanowska nr 17
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_c6b8502885fa3be307b5e270f77f176a = L.marker(
+                [51.12411528333333, 16.88538987],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_c3a0060bf029a581f4ba49b06971ff4c = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_d8027313f12e2638e8ece74b4bfdeba2 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NTM6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_c3a0060bf029a581f4ba49b06971ff4c.setContent(i_frame_d8027313f12e2638e8ece74b4bfdeba2);
+            
+        
+
+        marker_c6b8502885fa3be307b5e270f77f176a.bindPopup(popup_c3a0060bf029a581f4ba49b06971ff4c)
+        ;
+
+        
+    
+    
+            marker_c6b8502885fa3be307b5e270f77f176a.bindTooltip(
+                `<div>
+                     Jerzmanowo (Cmentarz I)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7d3b80c77e6147ffa40ed515980aba36 = L.marker(
+                [51.12268465, 16.87979172],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_0b349f1f00d76f85f41e94bb247397e3 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_16cd36877cd305ea570e370f80906118 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NTQ6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_0b349f1f00d76f85f41e94bb247397e3.setContent(i_frame_16cd36877cd305ea570e370f80906118);
+            
+        
+
+        marker_7d3b80c77e6147ffa40ed515980aba36.bindPopup(popup_0b349f1f00d76f85f41e94bb247397e3)
+        ;
+
+        
+    
+    
+            marker_7d3b80c77e6147ffa40ed515980aba36.bindTooltip(
+                `<div>
+                     Płużna
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_7c551353eaa3907dac450695c5d00f99 = L.marker(
+                [51.126571105, 16.880694075],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_facb925e8d24c91615c0d724ec1a89e1 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_ed1bb35d8b91e399034a290e709becac = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NTU6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_facb925e8d24c91615c0d724ec1a89e1.setContent(i_frame_ed1bb35d8b91e399034a290e709becac);
+            
+        
+
+        marker_7c551353eaa3907dac450695c5d00f99.bindPopup(popup_facb925e8d24c91615c0d724ec1a89e1)
+        ;
+
+        
+    
+    
+            marker_7c551353eaa3907dac450695c5d00f99.bindTooltip(
+                `<div>
+                     Kaczorowskiego
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_228ed5f424a4138d9fb9b104ebd87c31 = L.marker(
+                [51.12499107, 16.888366775],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_5cb62a7482e4116c104bfc824d9ae3f4 = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_2dcc93989e66fb7e1ee8f3a142f3c774 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NTY6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_5cb62a7482e4116c104bfc824d9ae3f4.setContent(i_frame_2dcc93989e66fb7e1ee8f3a142f3c774);
+            
+        
+
+        marker_228ed5f424a4138d9fb9b104ebd87c31.bindPopup(popup_5cb62a7482e4116c104bfc824d9ae3f4)
+        ;
+
+        
+    
+    
+            marker_228ed5f424a4138d9fb9b104ebd87c31.bindTooltip(
+                `<div>
+                     Jerzmanowo (Cmentarz)
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_43b1d33ff76031c21b56d1dc825f6aa4 = L.marker(
+                [51.12178299999999, 16.891236],
+                {
+}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+        var popup_a36a0319e0b9f7fda3575759acc8da3b = L.popup({
+  "maxWidth": 3000,
+});
+
+        
+            
+                var i_frame_dabed6c2d67748b2addf42c45b2a63d7 = $(`<iframe src="data:text/html;charset=utf-8;base64,CiAgICBQYXRoOiBBKiwgUm91dGU6IDEyOSwgQXJyaXZhbCBUaW1lOiAwIGRheXMgMDg6NTg6MDA7" width="700" style="border:none !important;" height="450"></iframe>`)[0];
+                popup_a36a0319e0b9f7fda3575759acc8da3b.setContent(i_frame_dabed6c2d67748b2addf42c45b2a63d7);
+            
+        
+
+        marker_43b1d33ff76031c21b56d1dc825f6aa4.bindPopup(popup_a36a0319e0b9f7fda3575759acc8da3b)
+        ;
+
+        
+    
+    
+            marker_43b1d33ff76031c21b56d1dc825f6aa4.bindTooltip(
+                `<div>
+                     Osiniecka
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3c4dba4e5deac7ba9c6b65792a32b855 = L.polyline(
+                [[51.111746845625, 17.061435821875], [51.1101549025, 17.0553860325], [51.1078565, 17.04563742], [51.108233506666664, 17.039620386666666], [51.104047351999995, 17.030755235999997], [51.107386661999996, 17.021539865], [51.105435375, 17.014417260000002], [51.10201158833333, 17.013311698333336], [51.1010895575, 17.0076865325], [51.099447828, 17.001092718000002], [51.098468315000005, 16.99620968], [51.09760909, 16.992287885], [51.096011704999995, 16.98587873], [51.09444512222222, 16.97995782888889], [51.101464899999996, 16.97280023], [51.1055896, 16.97071727], [51.109643155, 16.96869684], [51.1138185, 16.964762], [51.112449125000005, 16.960456660000002], [51.110406499999996, 16.9558685], [51.1065358825, 16.949547685], [51.10897669, 16.942424109999997], [51.10967282, 16.92912423], [51.108927355, 16.917949265], [51.108538945, 16.909639725], [51.10922461, 16.904753900000003], [51.10790886105, 16.89939125425], [51.10501115, 16.8990643], [51.110909565, 16.898401749999998], [51.111105995, 16.88941317], [51.10963532333333, 16.88163402]],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+            poly_line_3c4dba4e5deac7ba9c6b65792a32b855.bindTooltip(
+                `<div>
+                     Trasa GBFS
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_aa9d5e9deac89b1e55039316bcb2742a = L.polyline(
+                [[51.111746845625, 17.061435821875], [51.1125706475, 17.0563859525], [51.11367602714286, 17.05068700714286], [51.1099595225, 17.0480065], [51.108233506666664, 17.039620386666666], [51.104067668, 17.037619452], [51.104047351999995, 17.030755235999997], [51.107386661999996, 17.021539865], [51.108884669999995, 17.01814152], [51.110852, 17.0064815], [51.11211598, 17.000957593333336], [51.11284961333333, 16.994635423333335], [51.114021, 16.984523000000003], [51.114054, 16.9779775], [51.114364, 16.9737085], [51.1138185, 16.964762], [51.112449125000005, 16.960456660000002], [51.115228785, 16.95831088], [51.11863753, 16.954328875], [51.11960230333333, 16.952252088333335], [51.1214375725, 16.9462274575], [51.122500715, 16.930887435000002], [51.123362915, 16.923892844999997], [51.123594925, 16.91797183], [51.125673230000004, 16.91203789], [51.12610165, 16.90944279], [51.127469355, 16.90120229], [51.12411528333333, 16.88538987], [51.12268465, 16.87979172], [51.126571105, 16.880694075], [51.12499107, 16.888366775], [51.12178299999999, 16.891236], [51.10963532333333, 16.88163402]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_49754cfcfc093bbd17b8b4ac8c41c33c);
+        
+    
+            poly_line_aa9d5e9deac89b1e55039316bcb2742a.bindTooltip(
+                `<div>
+                     Trasa A*
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+</script>
+</html>
